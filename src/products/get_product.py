@@ -1,4 +1,4 @@
-from src.utils import get_header, get_context, get_specifications, get_parm, create_payload, get_response
+from src.utils import get_header, get_product_context, get_product_specifications, get_parm, create_payload, get_response
 from src.datamodel import Product, DBCredentials
 
 
@@ -12,8 +12,8 @@ def get_product_list(db_cred: DBCredentials, offset: int = 0, limit: int = 500):
     req_id = 30
     args = [ ]
     headers = get_header(referer=referer, origin=origin, cookie=db_cred.cookie, extra_header=True)
-    context = get_context(get_product=True)
-    specification = get_specifications(type="get_product")
+    context = get_product_context(get_product=True)
+    specification = get_product_specifications(type="get_product")
     params = get_parm(model, params_method, args, context, specification)
 
     params['kwargs'].update({"count_limit":10001,

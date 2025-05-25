@@ -1,4 +1,4 @@
-from src.utils import get_header, get_context, get_specifications, get_parm, create_payload, get_response
+from src.utils import get_header, get_product_context, get_product_specifications, get_parm, create_payload, get_response
 from src.datamodel import Product, DBCredentials
 
 
@@ -13,8 +13,8 @@ def get_single_product(product_id: int, db_cred: DBCredentials):
     args = [product_id]
 
     headers = get_header(referer=referer, origin=origin, cookie=db_cred.cookie, extra_header=True)
-    context = get_context(extra_setting=True)
-    specification = get_specifications(type="get_single_product")
+    context = get_product_context(extra_setting=True)
+    specification = get_product_specifications(type="get_single_product")
     params = get_parm(model, params_method, args, context, specification)
     payload = create_payload(req_id, method, params)
 

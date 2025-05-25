@@ -1,4 +1,4 @@
-from src.utils import get_header, get_context, get_specifications, get_parm, create_payload, get_response
+from src.utils import get_header, get_product_context, get_product_specifications, get_parm, create_payload, get_response
 from src.datamodel import Product, DBCredentials
 
 
@@ -57,23 +57,24 @@ def add_product(product: Product, db_cred: DBCredentials):
             ]
 
     headers = get_header(referer=referer, origin=origin, cookie=db_cred.cookie)
-    context = get_context()
-    specification = get_specifications(type="add_product")
+    context = get_product_context()
+    specification = get_product_specifications(type="add_product")
     params = get_parm(model, params_method, args, context, specification)
     payload = create_payload(req_id, method, params)
     response = get_response(url=url, header=headers, body=payload)
+    print(response)
     return response['result'][0]['id']
 
 if __name__ == '__main__':
     product_info = {
         "product": Product(**{"id": -1,"weight": 0.25,
-                        "volume": 0,
-                        "list_price": 400,
-                        "standard_price": 380,
+                        "volume": 0.0,
+                        "list_price": 400.0,
+                        "standard_price": 380.0,
                         "name": "Testing New Insert",
-                        "qty_available": 0}),
-        "db_url": "https://mewaahgharstore.odoo.com",
+                        "qty_available": 0.0}),
+        "db_cred": DBCredentials(**{"db_url": "https://mewaahgharstore.odoo.com",
         "cookie": "utm_source=db; utm_medium=auth; tz=Asia/Kolkata; session_id=O3_lBABFt89nV4yjQyem2rCPZUQJXD-JK4cFcRgNcq1cVKhzRnRk5hJcG6U1JaEd-56BMfww1FD5ET3HKLs5; cids=1; frontend_lang=en_IN",
 
-    }
+    })}
     print(add_product(**product_info))

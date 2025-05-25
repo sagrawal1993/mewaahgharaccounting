@@ -1,8 +1,8 @@
-from src.utils import get_header, get_context, get_specifications, get_parm, create_payload, get_response
+from src.utils import get_header, get_product_context, get_product_specifications, get_parm, create_payload, get_response
 from src.datamodel import Product, DBCredentials
 
 
-def update_product(db_cred: DBCredentials, product: Product,):
+def update_product(product: Product, db_cred: DBCredentials, ):
     product_id = product.id
     url = f"{db_cred.db_url}/web/dataset/call_kw/product.template/web_save"
     referer = f"{db_cred.db_url}/odoo/action-494/{product_id}"
@@ -58,8 +58,8 @@ def update_product(db_cred: DBCredentials, product: Product,):
             ]
 
     headers = get_header(referer=referer, origin=origin, cookie=db_cred.cookie, extra_header=True)
-    context = get_context(extra_setting=True)
-    specification = get_specifications(type="update_product")
+    context = get_product_context(extra_setting=True)
+    specification = get_product_specifications(type="update_product")
     params = get_parm(model, params_method, args, context, specification)
     payload = create_payload(req_id, method, params)
 
