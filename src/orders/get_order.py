@@ -93,18 +93,20 @@ def get_order_list(db_cred: DBCredentials, type: str, offset: int = 0, limit: in
     # print(response.status_code)
     # print(response.json())
 
-def get_specific_order(order_id: int, db_cred: DBCredentials):
-    url = f"{db_cred.db_url}/web/dataset/call_kw/pos.order/web_read"
-    referer = f"{db_cred.db_url}/odoo/pos-orders"
-    origin = db_cred.db_url
+def get_specific_order(order_id: int, db_cred: DBCredentials, type: str):
     model = "pos.order"
+    if type == "sale":
+        model = "sale.order"
+    url = f"{db_cred.db_url}/web/dataset/call_kw/{model}/web_read"
+    referer = f"{db_cred.db_url}/odoo/{'pos-orders' if type != 'sale' else 'sale-order'}"
+    origin = db_cred.db_url
     params_method = "web_read"
     method = "call"
     req_id = 30
     args = [ [order_id]]
     headers = get_header(referer=referer, origin=origin, cookie=db_cred.cookie, extra_header=True)
-    context = get_order_context(specific_order=True)
-    specification = get_order_specifications(specific_order=True)
+    context = get_order_context(specific_order=True, type='sale')
+    specification = get_order_specifications(specific_order=True, type='sale')
     params = get_parm(model, params_method, args, context, specification)
     payload = create_payload(req_id, method, params)
     print(payload)
@@ -237,3 +239,4 @@ if __name__ == '__main__':
     # order.id = order_id
     # confirm_order(order, db_cred)
     get_order_list(db_cred, "sale")
+    #get_specific_order(20, db_cred, "sale")

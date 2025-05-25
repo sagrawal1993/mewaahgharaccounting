@@ -410,118 +410,696 @@ def get_product_specifications(type: str = None):
 
 def get_order_specifications(specific_order=False, type="pos"):
     if type=="sale":
+        # return {
+        #         "message_needaction": {
+        #
+        #         },
+        #         "currency_id": {
+        #             "fields": {
+        #
+        #             }
+        #         },
+        #         "name": {
+        #
+        #         },
+        #         "date_order": {
+        #
+        #         },
+        #         "commitment_date": {
+        #
+        #         },
+        #         "expected_date": {
+        #
+        #         },
+        #         "partner_id": {
+        #             "fields": {
+        #                 "display_name": {
+        #
+        #                 }
+        #             }
+        #         },
+        #         "user_id": {
+        #             "fields": {
+        #                 "display_name": {
+        #
+        #                 }
+        #             }
+        #         },
+        #         "activity_ids": {
+        #             "fields": {
+        #
+        #             }
+        #         },
+        #         "activity_exception_decoration": {
+        #
+        #         },
+        #         "activity_exception_icon": {
+        #
+        #         },
+        #         "activity_state": {
+        #
+        #         },
+        #         "activity_summary": {
+        #
+        #         },
+        #         "activity_type_icon": {
+        #
+        #         },
+        #         "activity_type_id": {
+        #             "fields": {
+        #                 "display_name": {
+        #
+        #                 }
+        #             }
+        #         },
+        #         "team_id": {
+        #             "fields": {
+        #                 "display_name": {
+        #
+        #                 }
+        #             }
+        #         },
+        #         "company_id": {
+        #             "fields": {
+        #
+        #             }
+        #         },
+        #         "amount_untaxed": {
+        #
+        #         },
+        #         "amount_tax": {
+        #
+        #         },
+        #         "amount_total": {
+        #
+        #         },
+        #         "tag_ids": {
+        #             "fields": {
+        #                 "display_name": {
+        #
+        #                 },
+        #                 "color": {
+        #
+        #                 }
+        #             }
+        #         },
+        #         "state": {
+        #
+        #         },
+        #         "effective_date": {
+        #
+        #         },
+        #         "delivery_status": {
+        #
+        #         },
+        #         "invoice_status": {
+        #
+        #         },
+        #         "client_order_ref": {
+        #
+        #         },
+        #         "validity_date": {
+        #
+        #         }
+        #     }
         return {
-                "message_needaction": {
+            "locked":{
 
-                },
-                "currency_id": {
-                    "fields": {
+            },
+            "authorized_transaction_ids":{
 
-                    }
-                },
-                "name": {
+            },
+            "state":{
 
-                },
-                "date_order": {
+            },
+            "partner_credit_warning":{
 
-                },
-                "commitment_date": {
+            },
+            "duplicated_order_ids":{
+               "fields":{
+                  "display_name":{
 
-                },
-                "expected_date": {
+                  }
+               }
+            },
+            "delivery_count":{
 
-                },
-                "partner_id": {
-                    "fields": {
-                        "display_name": {
+            },
+            "pos_order_count":{
+
+            },
+            "expense_count":{
+
+            },
+            "invoice_count":{
+
+            },
+            "purchase_order_count":{
+
+            },
+            "mrp_production_count":{
+
+            },
+            "name":{
+
+            },
+            "partner_id":{
+               "fields":{
+                  "display_name":{
+
+                  }
+               },
+               "context":{
+                  "display_website":True,
+                  "res_partner_search_mode":"customer",
+                  "show_address":1,
+                  "show_vat":True
+               }
+            },
+            "delivery_set":{
+
+            },
+            "is_all_service":{
+
+            },
+            "recompute_delivery_price":{
+
+            },
+            "l10n_in_gst_treatment":{
+
+            },
+            "partner_invoice_id":{
+               "fields":{
+                  "display_name":{
+
+                  }
+               },
+               "context":{
+                  "default_type":"invoice",
+                  "show_address":False,
+                  "show_vat":False
+               }
+            },
+            "partner_shipping_id":{
+               "fields":{
+                  "display_name":{
+
+                  }
+               },
+               "context":{
+                  "default_type":"delivery",
+                  "show_address":False,
+                  "show_vat":False
+               }
+            },
+            "validity_date":{
+
+            },
+            "date_order":{
+
+            },
+            "has_active_pricelist":{
+
+            },
+            "show_update_pricelist":{
+
+            },
+            "country_code":{
+
+            },
+            "company_id":{
+               "fields":{
+
+               }
+            },
+            "currency_id":{
+               "fields":{
+
+               }
+            },
+            "pricelist_id":{
+               "fields":{
+
+               }
+            },
+            "tax_country_id":{
+               "fields":{
+
+               }
+            },
+            "tax_calculation_rounding_method":{
+
+            },
+            "payment_term_id":{
+               "fields":{
+                  "display_name":{
+
+                  }
+               }
+            },
+            "order_line":{
+               "fields":{
+                  "sequence":{
+
+                  },
+                  "display_type":{
+
+                  },
+                  "product_uom_category_id":{
+                     "fields":{
+
+                     }
+                  },
+                  "product_type":{
+
+                  },
+                  "product_updatable":{
+
+                  },
+                  "is_downpayment":{
+
+                  },
+                  "product_id":{
+                     "fields":{
+                        "display_name":{
 
                         }
-                    }
-                },
-                "user_id": {
-                    "fields": {
-                        "display_name": {
+                     }
+                  },
+                  "product_template_id":{
+                     "fields":{
+                        "display_name":{
 
                         }
-                    }
-                },
-                "activity_ids": {
-                    "fields": {
+                     }
+                  },
+                  "product_template_attribute_value_ids":{
 
-                    }
-                },
-                "activity_exception_decoration": {
+                  },
+                  "product_custom_attribute_value_ids":{
 
-                },
-                "activity_exception_icon": {
+                  },
+                  "product_no_variant_attribute_value_ids":{
 
-                },
-                "activity_state": {
+                  },
+                  "is_configurable_product":{
 
-                },
-                "activity_summary": {
+                  },
+                  "linked_line_id":{
+                     "fields":{
 
-                },
-                "activity_type_icon": {
+                     }
+                  },
+                  "virtual_id":{
 
-                },
-                "activity_type_id": {
-                    "fields": {
-                        "display_name": {
+                  },
+                  "linked_virtual_id":{
+
+                  },
+                  "selected_combo_items":{
+
+                  },
+                  "combo_item_id":{
+                     "fields":{
+
+                     }
+                  },
+                  "name":{
+
+                  },
+                  "is_reward_line":{
+
+                  },
+                  "product_uom_qty":{
+
+                  },
+                  "qty_delivered":{
+
+                  },
+                  "virtual_available_at_date":{
+
+                  },
+                  "qty_available_today":{
+
+                  },
+                  "free_qty_today":{
+
+                  },
+                  "scheduled_date":{
+
+                  },
+                  "forecast_expected_date":{
+
+                  },
+                  "warehouse_id":{
+                     "fields":{
+
+                     }
+                  },
+                  "move_ids":{
+
+                  },
+                  "qty_to_deliver":{
+
+                  },
+                  "is_mto":{
+
+                  },
+                  "display_qty_widget":{
+
+                  },
+                  "qty_delivered_method":{
+
+                  },
+                  "qty_invoiced":{
+
+                  },
+                  "qty_to_invoice":{
+
+                  },
+                  "product_uom_readonly":{
+
+                  },
+                  "product_uom":{
+                     "fields":{
+                        "display_name":{
 
                         }
-                    }
-                },
-                "team_id": {
-                    "fields": {
-                        "display_name": {
+                     }
+                  },
+                  "customer_lead":{
+
+                  },
+                  "product_packaging_qty":{
+
+                  },
+                  "product_packaging_id":{
+                     "fields":{
+                        "display_name":{
 
                         }
-                    }
-                },
-                "company_id": {
-                    "fields": {
+                     },
+                     "context":{
+                        "list_view_ref":"product.product_packaging_tree_view",
+                        "form_view_ref":"product.product_packaging_form_view"
+                     }
+                  },
+                  "recompute_delivery_price":{
 
-                    }
-                },
-                "amount_untaxed": {
+                  },
+                  "is_delivery":{
 
-                },
-                "amount_tax": {
+                  },
+                  "price_unit":{
 
-                },
-                "amount_total": {
+                  },
+                  "price_subtotal":{
 
-                },
-                "tag_ids": {
-                    "fields": {
-                        "display_name": {
+                  },
+                  "purchase_price":{
 
-                        },
-                        "color": {
+                  },
+                  "margin":{
+
+                  },
+                  "margin_percent":{
+
+                  },
+                  "technical_price_unit":{
+
+                  },
+                  "tax_id":{
+                     "fields":{
+                        "display_name":{
 
                         }
-                    }
-                },
-                "state": {
+                     },
+                     "context":{
+                        "active_test":True
+                     }
+                  },
+                  "discount":{
 
-                },
-                "effective_date": {
+                  },
+                  "price_total":{
 
-                },
-                "delivery_status": {
+                  },
+                  "tax_calculation_rounding_method":{
 
-                },
-                "invoice_status": {
+                  },
+                  "state":{
 
-                },
-                "client_order_ref": {
+                  },
+                  "invoice_status":{
 
-                },
-                "validity_date": {
+                  },
+                  "currency_id":{
+                     "fields":{
 
-                }
+                     }
+                  },
+                  "price_tax":{
+
+                  },
+                  "company_id":{
+                     "fields":{
+
+                     }
+                  },
+                  "product_document_ids":{
+
+                  },
+                  "is_product_archived":{
+
+                  },
+                  "order_id":{
+                     "fields":{
+
+                     }
+                  },
+                  "available_product_document_ids":{
+
+                  }
+               },
+               "limit":200,
+               "order":"sequence ASC, id ASC"
+            },
+            "note":{
+
+            },
+            "tax_totals":{
+
+            },
+            "margin":{
+
+            },
+            "amount_untaxed":{
+
+            },
+            "margin_percent":{
+
+            },
+            "loyalty_data":{
+
+            },
+            "sale_order_option_ids":{
+               "fields":{
+                  "sequence":{
+
+                  },
+                  "product_id":{
+                     "fields":{
+                        "display_name":{
+
+                        }
+                     }
+                  },
+                  "name":{
+
+                  },
+                  "quantity":{
+
+                  },
+                  "uom_id":{
+                     "fields":{
+                        "display_name":{
+
+                        }
+                     }
+                  },
+                  "product_uom_category_id":{
+                     "fields":{
+
+                     }
+                  },
+                  "price_unit":{
+
+                  },
+                  "discount":{
+
+                  },
+                  "is_present":{
+
+                  }
+               },
+               "limit":40,
+               "order":"sequence ASC, id ASC"
+            },
+            "quotation_document_ids":{
+
+            },
+            "customizable_pdf_form_fields":{
+
+            },
+            "user_id":{
+               "fields":{
+                  "display_name":{
+
+                  }
+               }
+            },
+            "team_id":{
+               "fields":{
+                  "display_name":{
+
+                  }
+               },
+               "context":{
+                  "kanban_view_ref":"sales_team.crm_team_view_kanban"
+               }
+            },
+            "is_abandoned_cart":{
+
+            },
+            "cart_recovery_email_sent":{
+
+            },
+            "require_signature":{
+
+            },
+            "require_payment":{
+
+            },
+            "prepayment_percent":{
+
+            },
+            "reference":{
+
+            },
+            "client_order_ref":{
+
+            },
+            "tag_ids":{
+               "fields":{
+                  "display_name":{
+
+                  },
+                  "color":{
+
+                  }
+               }
+            },
+            "show_update_fpos":{
+
+            },
+            "fiscal_position_id":{
+               "fields":{
+                  "display_name":{
+
+                  }
+               }
+            },
+            "invoice_status":{
+
+            },
+            "warehouse_id":{
+               "fields":{
+                  "display_name":{
+
+                  }
+               }
+            },
+            "incoterm":{
+               "fields":{
+                  "display_name":{
+
+                  }
+               }
+            },
+            "incoterm_location":{
+
+            },
+            "picking_policy":{
+
+            },
+            "shipping_weight":{
+
+            },
+            "commitment_date":{
+
+            },
+            "expected_date":{
+
+            },
+            "show_json_popover":{
+
+            },
+            "json_popover":{
+
+            },
+            "effective_date":{
+
+            },
+            "delivery_status":{
+
+            },
+            "origin":{
+
+            },
+            "opportunity_id":{
+               "fields":{
+                  "display_name":{
+
+                  }
+               },
+               "context":{
+                  "default_type":"opportunity"
+               }
+            },
+            "campaign_id":{
+               "fields":{
+                  "display_name":{
+
+                  }
+               }
+            },
+            "medium_id":{
+               "fields":{
+                  "display_name":{
+
+                  }
+               }
+            },
+            "source_id":{
+               "fields":{
+                  "display_name":{
+
+                  }
+               }
+            },
+            "has_archived_products":{
+
+            },
+            "company_price_include":{
+
+            },
+            "is_pdf_quote_builder_available":{
+
+            },
+            "display_name":{
+
             }
+         }
     if specific_order:
         return {
             "state":{
